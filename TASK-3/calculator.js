@@ -22,7 +22,7 @@ document
   .querySelectorAll(".calculator span:not(.clear):not(.equal):not(.delete)")
   .forEach(function (button) {
     button.addEventListener("click", function () {
-      if (calc.txt.value === "Error" || calc.txt.value === "undefined") {
+      if (calc.txt.value === "Error" || calc.txt.value === "undefined" || calc.txt.value === "0") {
         calc.txt.value = "";
       }
       calc.txt.value += this.innerText;
