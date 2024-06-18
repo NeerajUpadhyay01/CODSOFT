@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Courier Prime", monospace;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #202020;
+}
+
+.container {
+    position: relative;
+    width: 90vw;
+    max-width: 400px;
+    max-height: 95vh;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+                10px 10px 70px rgba(0, 0, 0, 0.25),
+                -5px -5px 15px rgba(0, 0, 0, 0.25) inset,
+                5px 5px 15px rgba(0, 0, 0, 0.25) inset;
+    background: #303030;
+    overflow: hidden;
+}
+
+.container span {
+    color: #fff;
+    position: relative;
+    display: grid;
+    width: 18vw;
+    height: 18vw;
+    max-width: 70px;
+    max-height: 70px;
+    place-items: center;
+    margin: 5px;
+    cursor: pointer;
+    user-select: none;
+    background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
+    border-radius: 10px;
+}
+
+.container span:active {
+    filter: brightness(1.5);
+}
+
+.container span::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    bottom: 14px;
+    right: 12px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #2d2d2d, #4d4d4d);
+    box-shadow: -5px -5px 15px rgba(0, 0, 0, 0.1), 10px 5px 10px rgba(0, 0, 0, 0.15);
+    border-left: 1px solid #0004;
+    border-bottom: 1px solid #0004;
+    border-top: 1px solid #0009;
+}
+
+.calculator span i {
+    position: relative;
+    font-style: normal;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+.calculator {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.calculator .value {
+    position: relative;
+    grid-column: span 4;
+    height: 10vw;
+    max-height: 70px;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #a7af7c;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.75);
+    text-align: right;
+    padding: 10px;
+    font-size: 2em;
+}
+
+.calculator .clear {
+    background: #f00;
+}
+
+.calculator .delete {
+    background: #ff8000;
+    padding: 0 5px 5px 0;
+}
+
+.calculator .delete::before {
+    background: linear-gradient(90deg, #ff8000, #ffffff5c);
+    border-left: 1px solid #fff4;
+    border-bottom: 1px solid #fff4;
+    border-top: 1px solid #fff4;
+}
+
+.calculator .clear::before {
+    background: linear-gradient(90deg, #d20000, #ffffff5c);
+    border-left: 1px solid #fff4;
+    border-bottom: 1px solid #fff4;
+    border-top: 1px solid #fff4;
+}
+
+.calculator .plus {
+    grid-row: span 2;
+    height: calc(36vw + 10px);
+    max-height: 150px;
+}
+
+.calculator .equal {
+    background: #2196f3;
+}
+
+.calculator .equal::before {
+    background: linear-gradient(90deg, #1479c8, #ffffff5c);
+    border-left: 1px solid #fff4;
+    border-bottom: 1px solid #fff4;
+    border-top: 1px solid #fff4;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    .container span {
+        width: 20vw;
+        height: 20vw;
+        max-width: 60px;
+        max-height: 60px;
+    }
+
+    .calculator .value {
+        height: 15vw;
+        max-height: 60px;
+        font-size: 1.5em;
+    }
+
+    .calculator .plus {
+        height: calc(40vw + 10px);
+        max-height: 130px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container {
+        width: 95vw;
+    }
+
+    .container span {
+        width: 22vw;
+        height: 22vw;
+        max-width: 55px;
+        max-height: 55px;
+    }
+
+    .calculator .value {
+        height: 20vw;
+        max-height: 50px;
+        font-size: 1.2em;
+    }
+
+    .calculator .plus {
+        height: calc(44vw + 10px);
+        max-height: 120px;
+    }
+}
